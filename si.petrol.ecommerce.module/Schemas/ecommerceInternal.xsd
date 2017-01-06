@@ -88,7 +88,7 @@
 	</xs:complexType>
 	<xs:complexType name="GetProductByCategoryRequestBodyType">
 		<xs:sequence>
-			<xs:element name="ProductId" type="xs:string" />
+			<xs:element name="CategoryId" type="xs:string" />
 			<element name="CatalogId" type="string" />
 			<element name="ShopId" type="string" />
 		</xs:sequence>

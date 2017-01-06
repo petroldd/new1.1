@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="unqualified"
+	
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Category">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GoogleKategorija" type="xs:string" minOccurs="0"/>
+				<xs:element name="kljuc" type="xs:string" minOccurs="0"/>
+				<xs:element name="naziv" type="xs:string" minOccurs="0"/>
+				<xs:element name="nivo" type="xs:string" minOccurs="0"/>
+				<xs:element name="zadnjinivo" type="xs:string" minOccurs="0"/>
+
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

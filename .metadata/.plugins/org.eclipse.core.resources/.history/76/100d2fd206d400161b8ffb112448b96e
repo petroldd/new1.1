@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_j6AEAdKJEeael9jPm9pTpw" name="si.petrol.productfeed.dataformats.CategoryDataFormatResource" type="dataformat:DataFormat">
+  <imports xmi:id="_lGaMwNKJEeael9jPm9pTpw" importType="http://www.w3.org/2001/XMLSchema" namespace=""/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_j6AEAtKJEeael9jPm9pTpw" formatType="Delimiter separated" colSeparator=";" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="Carriage Return/Line Feed (windows)" fillCharacter="Space" schemaElementQName="Category" fieldOffsetsStr="GoogleKategorija(0,0)&#xA;kljuc(0,0)&#xA;naziv(0,0)&#xA;nivo(0,0)&#xA;zadnjinivo(0,0)">
+    <fieldOffsets xmi:id="_lHH-cNKJEeael9jPm9pTpw" name="GoogleKategorija"/>
+    <fieldOffsets xmi:id="_lHH-cdKJEeael9jPm9pTpw" name="kljuc"/>
+    <fieldOffsets xmi:id="_lHH-ctKJEeael9jPm9pTpw" name="naziv"/>
+    <fieldOffsets xmi:id="_lHH-c9KJEeael9jPm9pTpw" name="nivo"/>
+    <fieldOffsets xmi:id="_lHH-dNKJEeael9jPm9pTpw" name="zadnjinivo"/>
+  </jndi:configuration>
+</jndi:namedResource>

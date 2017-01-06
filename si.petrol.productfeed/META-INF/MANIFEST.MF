@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: TIBCO Software Inc.
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=si.petrol.ecommerce.module)(version=1.0.0))",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
  com.tibco.bw.palette; filter:="(name=bw.file)",
  com.tibco.bw.palette; filter:="(name=bw.parse)",
