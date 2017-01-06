@@ -91,7 +91,23 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/eCommerce/listPriceRuleName</name>
-			<value>List Price Rule Name</value>
+			<value>List%20price%20rule</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/eCommerce/SkipProductWithId</name>
+			<value>100001</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/eCommerce/specialOfferRuleName</name>
+			<value></value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>

@@ -12,7 +12,9 @@
   <sca:property xmi:id="_uulkoNQNEeamxp5nIgBDpg" name="/eCommerce/storeId" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_wcFoQNQNEeamxp5nIgBDpg" name="/eCommerce/catalogId" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_KykMwNQOEeamxp5nIgBDpg" name="/eCommerce/listPriceRuleName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:component xmi:id="_x4qeoNKGEeaC19sEftpvmw" name="ComponentGenerateProductFeeds" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_x4qeodKGEeaC19sEftpvmw" processName="si.petrol.productfeed.GenerateProductFeeds2"/>
+  <sca:property xmi:id="_5amrUNQhEeauE-Ww4ah-Jw" name="/eCommerce/SkipProductWithId" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AYwJMNQiEeauE-Ww4ah-Jw" name="/eCommerce/specialOfferRuleName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_lHgOQNQQEeamxp5nIgBDpg" name="ComponentGenerateProductFeeds" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_lHg1UNQQEeamxp5nIgBDpg" processName="si.petrol.productfeed.GenerateProductFeeds"/>
   </sca:component>
 </sca:composite>

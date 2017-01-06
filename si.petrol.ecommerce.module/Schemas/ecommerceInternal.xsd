@@ -8,6 +8,62 @@
 	<xs:import namespace="http://schemas.petrol.si/DataContracts/Common/2016/12"
 		schemaLocation="./SharedInternal.xsd" />
 
+	<!-- GetInventoryAvailabilityRequest specific -->
+	<xs:element name="GetInventoryAvailabilityRequest" type="tns:GetInventoryAvailabilityRequestType" />
+	<xs:complexType name="GetInventoryAvailabilityRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body" type="tns:GetInventoryAvailabilityRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetInventoryAvailabilityRequestBodyType">
+		<xs:sequence>
+			<xs:element name="SKUUniqueId" type="xs:string" />
+
+			<element name="ShopId" type="string" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetInventoryAvailabilityResponse specific -->
+	<xs:complexType name="GetInventoryAvailabilityResponseBodyType">
+		<xs:sequence>
+			<element name="InventoryAvailability">
+				<complexType>
+					<sequence>
+						
+						<xs:element name="quantity" type="xs:int" />					
+						<xs:element name="unitOfMeasure" type="xs:string" />
+						<xs:element name="timestamp" type="dateTime" />
+						<xs:element name="StoreId" type="xs:int" minOccurs="0"/>
+						<xs:element name="StoreName" minOccurs="0" type="xs:string"/>
+						<xs:element name="productId" minOccurs="0" type="xs:int"/>
+						<xs:element name="inventoryStatus" minOccurs="0" type="xs:string"/>
+							
+
+					</sequence>
+				</complexType>
+			</element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<xs:element name="GetInventoryAvailabilityResponse" type="tns:GetInventoryAvailabilityResponseType" />
+	<xs:complexType name="GetInventoryAvailabilityResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body" type="tns:GetInventoryAvailabilityResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
 	<!-- GetProductByIdRequest specific -->
 	<xs:element name="GetProductByIdRequest" type="tns:GetProductByIdRequestType" />
 	<xs:complexType name="GetProductByIdRequestType">
