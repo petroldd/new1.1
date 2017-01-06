@@ -790,7 +790,7 @@
 
                                     <layoutConstraint
                                     x="525"
-                                    xsi:type="notation:Bounds" y="160"/>
+                                    xsi:type="notation:Bounds" y="167"/>
                                     </children>
 
                                     <children type="4018">
@@ -859,6 +859,60 @@
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
 
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activity/@activities.1/@activity/@activity/@activities.3"/>
+
+                                    <layoutConstraint
+                                    x="126"
+                                    xsi:type="notation:Bounds" y="-2"/>
+                                    </children>
+
                                     <styles xsi:type="notation:DrawerStyle"/>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -880,10 +934,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="108"
-                                    width="400"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    height="121"
+                                    width="279" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -902,9 +954,9 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
-                                    height="196"
-                                    width="608"
-                                    x="30"
+                                    height="121"
+                                    width="282"
+                                    x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
 
@@ -1029,9 +1081,9 @@
 
                                     <layoutConstraint
                                     height="165"
-                                    width="213"
-                                    x="352"
-                                    xsi:type="notation:Bounds" y="-10"/>
+                                    width="322"
+                                    x="298"
+                                    xsi:type="notation:Bounds" y="-3"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1290,7 +1342,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="632" width="1123" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="632" width="1318" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1385,14 +1437,14 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.2" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -8, -82, 25]$[83, -25, -24, 8]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://schemas.petrol.si/DataContracts/helpers/2016/12/Category"/>
@@ -1421,9 +1473,22 @@
         <bpws:variable element="ns7:Input" name="ParseData-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:Output" name="ParseData" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:GetProductByIdRequest"
-            name="CallProcess1-input" sca-bpel:internal="true"/>
+            name="GetProductById-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:GetProductByIdResponse"
-            name="CallProcess1" sca-bpel:internal="true"/>
+            name="GetProductById" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:GetPriceRequest"
+            name="GetPrice-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:GetPriceResponse" name="GetPrice" sca-bpel:internal="true"/>
+        <bpws:variable name="pstoreId" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/eCommerce/storeId" type="xsd:int"/>
+        <bpws:variable name="pcatalogId" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/eCommerce/catalogId" type="xsd:int"/>
+        <bpws:variable name="plistPriceRuleName"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="/eCommerce/listPriceRuleName" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1548,7 +1613,7 @@
                                 tibex:group="groupEnd" tibex:xpdlId="42e41bfa-a311-426e-a2af-c4d1a9f7423f"/>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&lt;tns:GetProductByCategoryRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;''&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:CategoryId>&lt;xsl:value-of select=&quot;$currentElement/kljuc&quot;/>&lt;/tns:CategoryId>&lt;tns:CatalogId>&lt;xsl:value-of select=&quot;&amp;quot;10051&amp;quot;&quot;/>&lt;/tns:CatalogId>&lt;tns:ShopId>&lt;xsl:value-of select=&quot;&amp;quot;10201&amp;quot;&quot;/>&lt;/tns:ShopId>&lt;/tns:Body>&lt;/tns:GetProductByCategoryRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;pstoreId&quot;/>&lt;xsl:param name=&quot;pcatalogId&quot;/>&lt;xsl:template name=&quot;GetProductByCategory-input&quot; match=&quot;/&quot;>&lt;tns:GetProductByCategoryRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;''&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:CategoryId>&lt;xsl:value-of select=&quot;$currentElement/kljuc&quot;/>&lt;/tns:CategoryId>&lt;tns:CatalogId>&lt;xsl:value-of select=&quot;$pcatalogId&quot;/>&lt;/tns:CatalogId>&lt;tns:ShopId>&lt;xsl:value-of select=&quot;$pstoreId&quot;/>&lt;/tns:ShopId>&lt;/tns:Body>&lt;/tns:GetProductByCategoryRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="GetProductByCategory-input"
                                     name="GetProductByCategory"
@@ -1563,7 +1628,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&lt;tns:GetProductByCategoryRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;''&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:CategoryId>&lt;xsl:value-of select=&quot;$currentElement/kljuc&quot;/>&lt;/tns:CategoryId>&lt;tns:CatalogId>&lt;xsl:value-of select=&quot;&amp;quot;10051&amp;quot;&quot;/>&lt;/tns:CatalogId>&lt;tns:ShopId>&lt;xsl:value-of select=&quot;&amp;quot;10201&amp;quot;&quot;/>&lt;/tns:ShopId>&lt;/tns:Body>&lt;/tns:GetProductByCategoryRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;pstoreId&quot;/>&lt;xsl:param name=&quot;pcatalogId&quot;/>&lt;xsl:template name=&quot;GetProductByCategory-input&quot; match=&quot;/&quot;>&lt;tns:GetProductByCategoryRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;''&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:CategoryId>&lt;xsl:value-of select=&quot;$currentElement/kljuc&quot;/>&lt;/tns:CategoryId>&lt;tns:CatalogId>&lt;xsl:value-of select=&quot;$pcatalogId&quot;/>&lt;/tns:CatalogId>&lt;tns:ShopId>&lt;xsl:value-of select=&quot;$pstoreId&quot;/>&lt;/tns:ShopId>&lt;/tns:Body>&lt;/tns:GetProductByCategoryRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     moduleRef="si.petrol.ecommerce.module"
@@ -1602,7 +1667,7 @@
                                 </bpws:targets>
                                 <bpws:sequence name="sequence" tibex:group="iterate">
                                     <bpws:empty name="GroupInit" tibex:group="groupInit"/>
-                                    <bpws:forEach counterName="index1"
+                                    <bpws:forEach counterName="idx"
                                     name="iterate1" parallel="no" tibex:group="iterate">
                                     <tibex:DesignExpression name="variableList">
                                     <tibex:expression
@@ -1614,14 +1679,14 @@
                                     <bpws:variables>
                                     <bpws:variable
                                     element="ns5:iterat_Current_Element_Product"
-                                    name="currentproduct" sca-bpel:internal="true"/>
+                                    name="currentProduct" sca-bpel:internal="true"/>
                                     </bpws:variables>
                                     <bpws:flow name="flow2">
                                     <bpws:links>
                                     <bpws:link
                                     name="GroupStart1ToCallProcess1" tibex:linkType="SUCCESS"/>
                                     <bpws:link
-                                    name="CallProcess1ToGroupEnd1" tibex:linkType="SUCCESS"/>
+                                    name="CallProcess1ToCallProcess" tibex:linkType="SUCCESS"/>
                                     </bpws:links>
                                     <bpws:assign
                                     name="GroupStart1"
@@ -1631,34 +1696,60 @@
                                     <bpws:source linkName="GroupStart1ToCallProcess1"/>
                                     </bpws:sources>
                                     <bpws:copy>
-                                    <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[($GetProductByCategory/ns5:Body/ns5:Product)[number($index1)]]]></bpws:from>
-                                    <bpws:to variable="currentproduct"/>
+                                    <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[($GetProductByCategory/ns5:Body/ns5:Product)[number($idx)]]]></bpws:from>
+                                    <bpws:to variable="currentProduct"/>
                                     </bpws:copy>
                                     </bpws:assign>
                                     <bpws:empty
                                     name="GroupEnd1"
-                                    tibex:group="groupEnd" tibex:xpdlId="c9e27d3e-73f5-49c2-9b1a-5b939f3f830a">
-                                    <bpws:targets>
-                                    <bpws:target linkName="CallProcess1ToGroupEnd1"/>
-                                    </bpws:targets>
-                                    </bpws:empty>
+                                    tibex:group="groupEnd" tibex:xpdlId="c9e27d3e-73f5-49c2-9b1a-5b939f3f830a"/>
                                     <bpws:extensionActivity>
                                     <tibex:extActivity
-                                    inputVariable="CallProcess1-input"
-                                    name="CallProcess1"
-                                    outputVariable="CallProcess1"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;currentProduct&quot;/>&#xa;    &lt;xsl:param name=&quot;_processContext&quot;/>&#xa;    &lt;xsl:param name=&quot;pstoreId&quot;/>&#xa;    &lt;xsl:template name=&quot;GetProductById-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:GetProductByIdRequest>&#xa;            &lt;tns:Context>&#xa;                &lt;tns1:RequestHeader>&#xa;                    &lt;TransactionId>&#xa;                        &lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&#xa;                    &lt;/TransactionId>&#xa;                &lt;/tns1:RequestHeader>&#xa;                &lt;tns1:ProcessContext>&#xa;                    &lt;ProcessPath>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                    &lt;/ProcessPath>&#xa;                &lt;/tns1:ProcessContext>&#xa;            &lt;/tns:Context>&#xa;            &lt;tns:Body>&#xa;                &lt;tns:ProductId>&#xa;                    &lt;xsl:value-of select=&quot;$currentProduct/tns:productID&quot;/>&#xa;                &lt;/tns:ProductId>&#xa;                &lt;tns:ShopId>&#xa;                    &lt;xsl:value-of select=&quot;$pstoreId&quot;/>&#xa;                &lt;/tns:ShopId>&#xa;            &lt;/tns:Body>&#xa;        &lt;/tns:GetProductByIdRequest>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="GetProductById-input"
+                                    name="GetProductById"
+                                    outputVariable="GetProductById"
                                     tibex:xpdlId="44081ae4-5435-4d46-8d13-f66881a608fc"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStart1ToCallProcess1"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="CallProcess1ToGroupEnd1"/>
+                                    <bpws:source linkName="CallProcess1ToCallProcess"/>
                                     </bpws:sources>
+                                    <tibex:inputBindings>
+
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;currentProduct&quot;/>&#xa;    &lt;xsl:param name=&quot;_processContext&quot;/>&#xa;    &lt;xsl:param name=&quot;pstoreId&quot;/>&#xa;    &lt;xsl:template name=&quot;GetProductById-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:GetProductByIdRequest>&#xa;            &lt;tns:Context>&#xa;                &lt;tns1:RequestHeader>&#xa;                    &lt;TransactionId>&#xa;                        &lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&#xa;                    &lt;/TransactionId>&#xa;                &lt;/tns1:RequestHeader>&#xa;                &lt;tns1:ProcessContext>&#xa;                    &lt;ProcessPath>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                    &lt;/ProcessPath>&#xa;                &lt;/tns1:ProcessContext>&#xa;            &lt;/tns:Context>&#xa;            &lt;tns:Body>&#xa;                &lt;tns:ProductId>&#xa;                    &lt;xsl:value-of select=&quot;$currentProduct/tns:productID&quot;/>&#xa;                &lt;/tns:ProductId>&#xa;                &lt;tns:ShopId>&#xa;                    &lt;xsl:value-of select=&quot;$pstoreId&quot;/>&#xa;                &lt;/tns:ShopId>&#xa;            &lt;/tns:Body>&#xa;        &lt;/tns:GetProductByIdRequest>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
 
                                     <tibex:CallProcess
                                     moduleRef="si.petrol.ecommerce.module"
                                     subProcessName="si.petrol.ecommerce.dataprocesses.GetProductById" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    </tibex:extActivity>
+                                    </bpws:extensionActivity>
+                                    <bpws:extensionActivity>
+                                    <tibex:extActivity
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentProduct&quot;/>&lt;xsl:param name=&quot;pstoreId&quot;/>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;plistPriceRuleName&quot;/>&lt;xsl:template name=&quot;GetPrice-input&quot; match=&quot;/&quot;>&lt;tns:GetPriceRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:ProductId>&lt;xsl:value-of select=&quot;$currentProduct/tns:productID&quot;/>&lt;/tns:ProductId>&lt;tns:StoreId>&lt;xsl:value-of select=&quot;$pstoreId&quot;/>&lt;/tns:StoreId>&lt;tns:PriceRuleName>&lt;xsl:value-of select=&quot;$plistPriceRuleName&quot;/>&lt;/tns:PriceRuleName>&lt;/tns:Body>&lt;/tns:GetPriceRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="GetPrice-input"
+                                    name="GetPrice"
+                                    outputVariable="GetPrice"
+                                    tibex:xpdlId="d2160b0e-fb0b-47da-a6fd-65e77d20fffb"
+                                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="CallProcess1ToCallProcess"/>
+                                    </bpws:targets>
+                                    <tibex:inputBindings>
+
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://schemas.petrol.si/DataContracts/ecommerce/2016/12&quot; xmlns:tns1=&quot;http://schemas.petrol.si/DataContracts/Common/2016/12&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentProduct&quot;/>&lt;xsl:param name=&quot;pstoreId&quot;/>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;plistPriceRuleName&quot;/>&lt;xsl:template name=&quot;GetPrice-input&quot; match=&quot;/&quot;>&lt;tns:GetPriceRequest>&lt;tns:Context>&lt;tns1:RequestHeader>&lt;TransactionId>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/TransactionId>&lt;/tns1:RequestHeader>&lt;tns1:ProcessContext>&lt;ProcessPath>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ProcessPath>&lt;/tns1:ProcessContext>&lt;/tns:Context>&lt;tns:Body>&lt;tns:ProductId>&lt;xsl:value-of select=&quot;$currentProduct/tns:productID&quot;/>&lt;/tns:ProductId>&lt;tns:StoreId>&lt;xsl:value-of select=&quot;$pstoreId&quot;/>&lt;/tns:StoreId>&lt;tns:PriceRuleName>&lt;xsl:value-of select=&quot;$plistPriceRuleName&quot;/>&lt;/tns:PriceRuleName>&lt;/tns:Body>&lt;/tns:GetPriceRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+
+                                    <tibex:CallProcess
+                                    moduleRef="si.petrol.ecommerce.module"
+                                    subProcessName="si.petrol.ecommerce.dataprocesses.GetPrice" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                     </tibex:extActivity>
                                     </bpws:extensionActivity>
                                     </bpws:flow>

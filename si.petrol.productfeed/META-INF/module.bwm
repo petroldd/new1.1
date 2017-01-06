@@ -9,6 +9,9 @@
   <sca:property xmi:id="_JOMaxs6OEeaj7ZRgvAM6jQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_JOMax86OEeaj7ZRgvAM6jQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_JOMayM6OEeaj7ZRgvAM6jQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_uulkoNQNEeamxp5nIgBDpg" name="/eCommerce/storeId" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wcFoQNQNEeamxp5nIgBDpg" name="/eCommerce/catalogId" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KykMwNQOEeamxp5nIgBDpg" name="/eCommerce/listPriceRuleName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_x4qeoNKGEeaC19sEftpvmw" name="ComponentGenerateProductFeeds" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_x4qeodKGEeaC19sEftpvmw" processName="si.petrol.productfeed.GenerateProductFeeds2"/>
   </sca:component>
