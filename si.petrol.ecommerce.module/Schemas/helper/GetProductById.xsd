@@ -1,0 +1,113 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="recordSetTotal" minOccurs="0"/>
+        <xs:element type="xs:string" name="resourceName" minOccurs="0"/>
+        <xs:element type="xs:anyURI" name="resourceId" minOccurs="0"/>
+        <xs:element type="xs:byte" name="recordSetStartNumber" minOccurs="0"/>
+        <xs:element type="xs:string" name="recordSetComplete" minOccurs="0"/>
+        <xs:element type="xs:byte" name="recordSetCount" minOccurs="0"/>
+        <xs:element name="CatalogEntryView">
+          <xs:complexType>
+            <xs:all>
+              <xs:element type="xs:string" name="shortDescription"/>
+              <xs:element type="xs:string" name="longDescription" minOccurs="0"/>
+              <xs:element type="xs:string" name="buyable" minOccurs="0"/>
+              <xs:element type="xs:int" name="singleSKUUniqueID"/>
+              <xs:element type="xs:short" name="parentCategoryID"/>
+              <xs:element type="xs:string" name="metaKeyword" minOccurs="0"/>
+              <xs:element type="xs:anyURI" name="resourceId"/>
+              <xs:element name="Price" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="priceDescription" minOccurs="0"/>
+                    <xs:element type="xs:float" name="priceValue" minOccurs="0"/>
+                    <xs:element type="xs:string" name="priceUsage" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="keyword" minOccurs="0"/>
+              <xs:element type="xs:string" name="productType" minOccurs="0"/>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="fullImage"/>
+              <xs:element type="xs:string" name="thumbnail"/>
+              <xs:element type="xs:int" name="uniqueID"/>
+              <xs:element type="xs:string" name="manufacturer"/>
+              <xs:element name="SKUs" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Price" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="SKUPriceDescription" minOccurs="0"/>
+                          <xs:element type="xs:string" name="SKUPriceUsage" minOccurs="0"/>
+                          <xs:element type="xs:float" name="SKUPriceValue" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:int" name="SKUUniqueID"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:byte" name="numberOfSKUs"/>
+              <xs:element type="xs:string" name="metaDescription" minOccurs="0"/>
+              <xs:element name="Attributes"  minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="usage"/>
+                    <xs:element type="xs:string" name="searchable"/>
+                    <xs:element name="Values">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="values"/>
+                          <xs:element name="extendedValue" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:int" name="value"/>
+                                <xs:element type="xs:string" name="key"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="identifier"/>
+                          <xs:element type="xs:long" name="uniqueID"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="dataType"/>
+                    <xs:element name="ExtendedValue" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:int" name="extValue"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="identifier"/>
+                    <xs:element type="xs:string" name="comparable"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:long" name="uniqueID"/>
+                    <xs:element type="xs:string" name="displayable"/>
+                    <xs:element type="xs:string" name="description"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="title" minOccurs="0"/>
+              <xs:element type="xs:string" name="hasSingleSKU" minOccurs="0"/>
+              <xs:element type="xs:short" name="storeID"/>
+              <xs:element type="xs:string" name="partNumber"/>
+              <xs:element type="xs:string" name="fullImageAltDescription" minOccurs="0"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MetaData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="metaKey"/>
+              <xs:element type="xs:byte" name="metaData"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

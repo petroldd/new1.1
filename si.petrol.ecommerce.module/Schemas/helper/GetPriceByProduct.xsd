@@ -1,0 +1,41 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="resourceName" minOccurs="0"/>
+        <xs:element type="xs:anyURI" name="resourceId" minOccurs="0"/>
+        <xs:element name="resultList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:short" name="priceRuleId" minOccurs="0"/>
+              <xs:element type="xs:string" name="priceRuleName"/>
+              <xs:element type="xs:int" name="catalogEntryId"/>
+              <xs:element name="unitPrice">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="price">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="currency"/>
+                          <xs:element type="xs:decimal" name="value"/>
+                        </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="quantity" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:float" name="value" minOccurs="0"/>
+                          <xs:element type="xs:string" name="uom" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

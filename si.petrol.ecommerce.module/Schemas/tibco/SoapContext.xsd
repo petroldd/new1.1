@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bwst="http://xmlns.tibco.com/soap/context" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.tibco.com/soap/context" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<complexType name="CertificateChainType">
+		<sequence>
+			<element name="Certificate" type="bwst:CertificateType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<simpleType name="CertificateReferenceType">
+		<restriction base="xsd:string">
+			<enumeration value="Direct"/>
+			<enumeration value="SKI"/>
+			<enumeration value="Embedded"/>
+		</restriction>
+	</simpleType>
+	<complexType name="CertificateTokenType">
+		<sequence>
+			<element name="CipherSuite" type="xsd:string" minOccurs="0"/>
+			<element name="CertificateChain" type="bwst:CertificateChainType"/>
+		</sequence>
+	</complexType>
+	<complexType name="CertificateType">
+		<sequence>
+			<element name="SubjectDN" type="xsd:string" minOccurs="0"/>
+			<element name="IssuerDN" type="xsd:string" minOccurs="0"/>
+			<element name="SerialNo" type="xsd:string" minOccurs="0"/>
+			<element name="Fingerprint" type="xsd:base64Binary" minOccurs="0"/>
+			<element name="X509Certificate" type="bwst:X509CertificateType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="ContextTypeForHTTPFull">
+		<all>
+			<element name="RemoteAddress" type="xsd:string" minOccurs="0"/>
+			<element name="RemoteHost" type="xsd:string" minOccurs="0"/>
+			<element name="SecurityContext" type="bwst:securityContextTypeForHTTP" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="ContextTypeForHTTPWithoutFQDN">
+		<all>
+			<element name="RemoteAddress" type="xsd:string" minOccurs="0"/>
+			<element name="SecurityContext" type="bwst:securityContextTypeForHTTP" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="ContextTypeForJMS">
+		<all>
+			<element name="SecurityContext" type="bwst:securityContextTypeForJMS" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="ContextTypeOnlyRemoteAddr">
+		<all>
+			<element name="RemoteAddress" type="xsd:string" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="ContextTypeRemoteAddr_Host">
+		<all>
+			<element name="RemoteAddress" type="xsd:string" minOccurs="0"/>
+			<element name="RemoteHost" type="xsd:string" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="UsernamePasswordTokenType">
+		<sequence>
+			<element name="Username" type="xsd:string"/>
+			<element name="Password" minOccurs="0">
+				<complexType>
+					<simpleContent>
+						<extension base="xsd:string">
+							<attribute name="type" type="xsd:string"/>
+						</extension>
+					</simpleContent>
+				</complexType>
+			</element>
+			<element name="Nonce" type="xsd:string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="X509CertificateType">
+		<sequence>
+			<element name="Encoded" type="xsd:base64Binary"/>
+		</sequence>
+	</complexType>
+	<complexType name="keyIdentifierType">
+		<simpleContent>
+			<extension base="xsd:string">
+				<attribute name="EncodingType" type="xsd:anyURI"/>
+				<attribute name="ValueType" type="xsd:anyURI"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="keyInfoType">
+		<choice>
+			<element name="Certificate" type="bwst:CertificateType" minOccurs="0"/>
+			<element name="KeyIdentifier" type="bwst:keyIdentifierType" minOccurs="0"/>
+		</choice>
+	</complexType>
+	<complexType name="securityContextTypeForHTTP">
+		<all>
+			<element name="Transport" type="bwst:transportSecurityContextType" minOccurs="0"/>
+			<element name="WSSE" type="bwst:wsseSecurityContextType" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="securityContextTypeForJMS">
+		<all>
+			<element name="WSSE" type="bwst:wsseSecurityContextType" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="securityHeaderType">
+		<sequence>
+			<element name="actor" type="xsd:anyURI"/>
+			<element name="mustUnderstand" type="xsd:boolean"/>
+		</sequence>
+	</complexType>
+	<complexType name="signatureType">
+		<sequence>
+			<element name="Value" type="xsd:base64Binary" minOccurs="0"/>
+			<element name="Token" type="bwst:tokenContextType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="tokenContextType">
+		<choice>
+			<element name="KeyInfo" type="bwst:keyInfoType" minOccurs="0"/>
+			<element name="UsernameToken" type="bwst:UsernamePasswordTokenType" minOccurs="0"/>
+		</choice>
+	</complexType>
+	<complexType name="transportSecurityContextType">
+		<all>
+			<element name="CertificateToken" type="bwst:CertificateTokenType" minOccurs="0"/>
+			<element name="UsernameToken" type="bwst:UsernamePasswordTokenType" minOccurs="0"/>
+		</all>
+	</complexType>
+	<complexType name="wsseSecurityContextType">
+		<all>
+			<element name="Authentication" type="bwst:tokenContextType" minOccurs="0"/>
+			<element name="Signature" type="bwst:signatureType" minOccurs="0"/>
+		</all>
+	</complexType>
+</schema>

@@ -1,0 +1,71 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+
+ >
+  <xs:element name="root" type="rootType"/>
+  <xs:complexType name="BreadCrumbTrailEntryViewType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="value" minOccurs="0"/>
+      <xs:element type="xs:string" name="label" minOccurs="0"/>
+      <xs:element type="xs:string" name="type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="label" minOccurs="0"/>
+      <xs:element type="xs:string" name="entryValue" minOccurs="0"/>
+      <xs:element type="xs:int" name="count" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FacetViewType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="value" minOccurs="0"/>
+      <xs:element type="EntryType" name="Entry" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="name" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PriceType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="priceDescription" minOccurs="0"/>
+      <xs:element type="xs:float" name="priceValue" minOccurs="0"/>
+      <xs:element type="xs:string" name="priceUsage" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CatalogEntryViewType">
+    <xs:all >
+      <xs:element type="xs:string" name="shortDescription" minOccurs="0"/>
+      <xs:element type="xs:string" name="buyable" minOccurs="0"/>
+      <xs:element type="xs:string" name="longDescription"  minOccurs="0"/>
+      <xs:element type="xs:int" name="parentCategoryID" minOccurs="0"/>
+      <xs:element type="xs:anyURI" name="resourceId" minOccurs="0"/>
+      <xs:element type="xs:string" name="productType" minOccurs="0"/>
+      <xs:element type="PriceType" name="Price" minOccurs="0"/>
+      <xs:element type="xs:string" name="name" minOccurs="0"/>
+      <xs:element type="xs:int" name="storeID"/>
+      <xs:element type="xs:int" name="uniqueID"/>
+      <xs:element type="xs:string" name="partNumber" minOccurs="0"/>
+      <xs:element type="xs:string" name="keyword" minOccurs="0"/>
+      <xs:element type="xs:string" name="fullImage" minOccurs="0"/>
+      <xs:element type="xs:string" name="thumbnail" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="MetaDataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="metaKey" minOccurs="0"/>
+      <xs:element type="xs:int" name="metaData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rootType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="recordSetTotal" minOccurs="0"/>
+      <xs:element type="BreadCrumbTrailEntryViewType" name="BreadCrumbTrailEntryView" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="resourceName" minOccurs="0"/>
+      <xs:element type="xs:anyURI" name="resourceId" minOccurs="0"/>
+      <xs:element type="xs:string" name="recordSetComplete" minOccurs="0"/>
+      <xs:element type="xs:int" name="recordSetStartNumber" minOccurs="0"/>
+      <xs:element type="FacetViewType" name="FacetView" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:int" name="recordSetCount" minOccurs="0"/>
+      <xs:element type="CatalogEntryViewType" name="CatalogEntryView" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="MetaDataType" name="MetaData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

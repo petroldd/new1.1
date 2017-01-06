@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema xmlns:bwst="http://xmlns.tibco.com/soap/context"
+	xmlns:tns="http://schemas.petrol.si/DataContracts/Common/2016/12"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+	elementFormDefault="unqualified"
+	targetNamespace="http://schemas.petrol.si/DataContracts/Common/2016/12"
+	version="1.0">
+	<xs:annotation>
+		<xs:documentation>common -
+			http://schemas.petrol.si/DataContracts/SharedInternal
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://xmlns.tibco.com/soap/context"
+		schemaLocation="./tibco/SoapContext.xsd" />
+	<xs:complexType name="RequestContextType">
+		<xs:sequence>
+			<xs:element ref="tns:RequestHeader" />
+			<xs:element ref="tns:ProcessContext" />
+			<xs:element ref="tns:SenderInfo" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestBodyType">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="strict" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Request">
+		<xs:sequence>
+			<xs:element name="Context" type="tns:RequestContextType" />
+			<xs:element name="Body" type="tns:RequestBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="UserInfoType" type="tns:UserInfoType" />
+	<xs:complexType name="UserInfoType">
+		<xs:sequence>
+			<xs:element name="UserGroup" type="tns:UserGroupEnum"
+				minOccurs="0" />
+			<xs:element name="UserName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SenderInfo" type="tns:SenderInfoType" />
+	<xs:complexType name="SenderInfoType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" />
+			<xs:element minOccurs="0" name="Channel" type="xs:string" />
+			<xs:element minOccurs="0" name="Application" type="xs:string" />
+			<xs:element minOccurs="0" name="Node" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SeverityEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Error" />
+			<xs:enumeration value="Success" />
+			<xs:enumeration value="Warning" />
+			<xs:enumeration value="BusinessError" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ErrorTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Application" />
+			<xs:enumeration value="Connectivity" />
+			<xs:enumeration value="Business" />
+			<xs:enumeration value="Technical" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="SimpleBusinessError">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:string" />
+				<xs:element minOccurs="0" name="Message" type="xs:string" />
+				<xs:element minOccurs="0" name="RetryFlag" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="ProcessContext" type="tns:ProcessContextType" />
+	<xs:complexType name="ProcessContextType">
+		<xs:sequence>
+			<xs:element name="ProcessPath" type="xs:string" />
+			<xs:element ref="tns:SecurityContex" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="ResponseResult" type="tns:ResponseResultType" />
+	<xs:complexType name="ResponseResultType">
+		<xs:sequence>
+			<xs:element name="Severity" type="tns:SeverityEnum" />
+			<xs:element name="Code" type="xs:string" />
+			<xs:element minOccurs="0" name="Message" type="xs:string" />
+			<xs:element minOccurs="0" name="RetryFlag" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Context" type="tns:RequestContextType" />
+
+	<xs:simpleType name="GuId">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="RequestHeader" type="tns:RequestHeaderType" />
+	<xs:complexType name="RequestHeaderType">
+		<xs:sequence>
+			<xs:element name="SessionId" type="tns:GuId" minOccurs="0" />
+			<xs:element name="TransactionId" type="tns:GuId"
+				minOccurs="0" />
+			<xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="VersionId" type="xs:string" />
+			<xs:element minOccurs="0" name="Priority" type="xs:int" />
+
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResponseHeader" type="tns:ResponseHeaderType" />
+	<xs:complexType name="ResponseHeaderType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SessionId" type="xs:string" />
+			<xs:element minOccurs="0" name="TransactionId" type="xs:string" />
+			<xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResponseContext" type="tns:ResponseContextType" />
+	<xs:complexType name="ResponseContextType">
+		<xs:sequence>
+			<xs:element name="Header" type="tns:ResponseHeaderType" />
+			<xs:element name="Result" type="tns:ResponseResultType" minOccurs="0"  />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="UserGroupEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Customer" />
+			<xs:enumeration value="DomainUser" />
+			<xs:enumeration value="System" />
+			<xs:enumeration value="TrustedUser" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="SecurityContexType">
+		<xs:sequence>
+			<xs:element ref="tns:Authorization" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityContex" type="tns:SecurityContexType" />
+	<xs:complexType name="AuthorizationType">
+		<xs:choice>
+			<xs:element name="UsernameToken">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Username" type="xs:string" />
+						<xs:element name="Password" minOccurs="0">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="type" type="xs:string" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Nonce" type="xs:string" minOccurs="0" />
+						<xs:element name="AuthorizedUsers" type="xs:string"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="X509Token">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Certificate" type="tns:CertificateType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Skip" type="xs:boolean" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Authorization" type="tns:AuthorizationType" />
+	<xs:complexType name="CertificateType">
+		<xs:sequence>
+			<xs:element name="SubjectDN" type="xs:string" minOccurs="0" />
+			<xs:element name="IssuerDN" type="xs:string" minOccurs="0" />
+			<xs:element name="SerialNo" type="xs:string" minOccurs="0" />
+			<xs:element name="Fingerprint" type="xs:base64Binary"
+				minOccurs="0" />
+			<xs:element name="X509Certificate" type="tns:X509CertificateType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="X509CertificateType">
+		<xs:sequence>
+			<xs:element name="Encoded" type="xs:base64Binary" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Certificate" type="tns:CertificateType" />
+	<xs:element name="X509Certificate" type="tns:X509CertificateType" />
+
+	<xs:simpleType name="MessageTransferEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SoapOverHttp" />
+			<xs:enumeration value="SoapOverJms" />
+			<xs:enumeration value="OverJms" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ErrorReport" type="tns:ErrorReportType" />
+	<xs:complexType name="ErrorReportType">
+		<xs:sequence>
+			<xs:element name="StackTrace" type="xs:string" />
+			<xs:element name="Msg" type="xs:string" />
+			<xs:element name="FullClass" type="xs:string" />
+			<xs:element name="Class" type="xs:string" />
+			<xs:element name="ProcessStack" type="xs:string" />
+			<xs:element minOccurs="0" name="MsgCode" type="xs:string" />
+			<xs:element minOccurs="0" name="Data">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:any namespace="##any" processContents="skip" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ExceptionTimeStamp">
+		<xs:annotation>
+			<xs:documentation>
+				It MUST be set to the time at which the fault
+				occurred.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+	<xs:simpleType name="ExceptionOriginator">
+		<xs:annotation>
+			<xs:documentation>
+				This element is an optional URI EndpointReference
+				of the Web service that generated the fault.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+	<xs:simpleType name="ExceptionClass">
+		<xs:annotation>
+			<xs:documentation>
+				The exceptionClass contains a machine readable
+				classification of the exception. Its up to the
+				service provider to
+				limit the number of classes here and provide the information which
+				kind
+				of errors can occur to the consumer.
+
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+	<xs:simpleType name="ExceptionSubCode">
+		<xs:annotation>
+			<xs:documentation>
+				It should be filled when machine readable
+				information of a nested error are available, e.g.
+				a database error
+				number could be stored here. It is up to the service provider to
+				define the
+				possible sub error codes and their meaning.
+				Best practise
+				for such information would be to distinguish between
+				typical cases
+				which might
+				need different treatment than the usual
+				cases of the
+				exception class.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+	<xs:simpleType name="ExceptionStackTrace">
+		<xs:annotation>
+			<xs:documentation>
+				Allows to add stack trace information if an
+				internal exception of the service
+				provider occured while processing
+				the service. The stack trace is just intended
+				as a quick debugging
+				aid, thus its structure must just be understood by the
+				service
+				provider.
+				Subject to be removed from the exception when communicating
+				to an external partner
+				to not expose internals to the outside world.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+	<xs:simpleType name="ExceptionFurtherInfo">
+		<xs:annotation>
+			<xs:documentation>
+				Additional human readable information can be added
+				by using
+				the furtherInfo attribute. Should be understood as a
+				debugging
+				aid for the service provider, thus unformatted text format
+				is expected.
+				Subject to be removed from the exception when
+				communicating to an external
+				partner
+				to not expose internals to the
+				outside world.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+		<!-- ****************************************************************** -->
+	</xs:simpleType>
+
+	<!-- ****************************************************************** -->
+	<xs:element name="TechnicalException" type="tns:TechnicalExceptionType" />
+	<xs:complexType name="TechnicalExceptionType">
+		<xs:annotation>
+			<xs:documentation>
+				The TechnicalException is the designed default
+				exception.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Header" type="tns:ResponseHeaderType" />
+			<xs:element name="Timestamp" type="tns:ExceptionTimeStamp" />
+			<xs:element minOccurs="0" name="Originator" type="tns:ExceptionOriginator" />
+			<xs:element minOccurs="0" name="ExceptionClass" type="tns:ExceptionClass" />
+			<xs:element minOccurs="0" name="SubCode" type="tns:ExceptionSubCode" />
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Description"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+			<xs:element minOccurs="0" name="StackTrace" type="tns:ExceptionStackTrace" />
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="FurtherInfo"
+				type="tns:ExceptionFurtherInfo" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StandardSelector">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="MaxRecordCount" type="xs:int" />
+			<xs:element minOccurs="0" name="FromDateTime" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="ToDateTime" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ProcessInstruction" type="tns:ProcessInstructionType" />
+	<xs:complexType name="ProcessInstructionType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PagingInfoRequest" type="tns:PagingInfoRequestType" />
+			<xs:element minOccurs="0" name="PagingInfoResponse"
+				type="tns:PagingInfoResponseType" />
+			<xs:element minOccurs="0" name="Interval" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PagingInfoRequestType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+			<xs:element minOccurs="0" name="PageSize" type="xs:int" />
+			<xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PagingInfoResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+			<xs:element minOccurs="0" name="MoreResult" type="xs:boolean" />
+			<xs:element minOccurs="0" name="StarDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

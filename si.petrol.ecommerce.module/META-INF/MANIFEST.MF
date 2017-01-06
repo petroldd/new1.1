@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Si Petrol Ecommerce Module
+Bundle-SymbolicName: si.petrol.ecommerce.module
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.restjson)",
+ com.tibco.bw.palette; filter:="(name=bw.xml)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.httpclient)"
+Provide-Capability: com.tibco.bw.module; name="si.petrol.ecommerce.module"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://schemas.petrol.si/DataContracts/Common/2016/12",
+ com.tibco.bw.schemas; ns="http://schemas.petrol.si/DataContracts/ecommerce/2016/12",
+ com.tibco.bw.schemas; ns="http://xmlns.tibco.com/soap/context",
+ com.tibco.bw.processes; name="si.petrol.ecommerce.dataprocesses",
+ com.tibco.bw.resources; name="si.petrol.ecommerce.module"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-Version: 6.3.4 HF1 V29 2016-12-12
