@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:si="http://schemas.petrol.si/DataContracts/Common/2016/12"
+	xmlns:tns="http://schemas.petrol.si/DataContracts/ecommerce/2016/12"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	targetNamespace="http://schemas.petrol.si/DataContracts/ecommerce/2016/12">
+
+	<xs:import namespace="http://schemas.petrol.si/DataContracts/Common/2016/12"
+		schemaLocation="./SharedInternal.xsd" />
+
+	<!-- GetCategoryByCategoryIdRequest specific -->
+
+	<!-- GetCategoryByCategoryIdResponse specific -->
+
+
+	<!-- GetInventoryAvailabilityRequest specific -->
+	<xs:element name="GetInventoryAvailabilityRequest" type="tns:GetInventoryAvailabilityRequestType" />
+	<xs:complexType name="GetInventoryAvailabilityRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body"
+				type="tns:GetInventoryAvailabilityRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetInventoryAvailabilityRequestBodyType">
+		<xs:sequence>
+			<xs:element name="SKUUniqueId" type="xs:string" />
+
+			<element name="ShopId" type="string" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetInventoryAvailabilityResponse specific -->
+	<xs:complexType name="GetInventoryAvailabilityResponseBodyType">
+		<xs:sequence>
+			<element name="InventoryAvailability">
+				<complexType>
+					<sequence>
+
+						<xs:element name="quantity" type="xs:int" />
+						<xs:element name="unitOfMeasure" type="xs:string" />
+						<xs:element name="timestamp" type="dateTime" />
+						<xs:element name="StoreId" type="xs:int" minOccurs="0" />
+						<xs:element name="StoreName" minOccurs="0" type="xs:string" />
+						<xs:element name="productId" minOccurs="0" type="xs:int" />
+						<xs:element name="inventoryStatus" minOccurs="0"
+							type="xs:string" />
+
+
+					</sequence>
+				</complexType>
+			</element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<xs:element name="GetInventoryAvailabilityResponse" type="tns:GetInventoryAvailabilityResponseType" />
+	<xs:complexType name="GetInventoryAvailabilityResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body"
+				type="tns:GetInventoryAvailabilityResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByIdRequest specific -->
+	<xs:element name="GetProductByIdRequest" type="tns:GetProductByIdRequestType" />
+	<xs:complexType name="GetProductByIdRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body" type="tns:GetProductByIdRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetProductByIdRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductId" type="xs:string" />
+
+			<element name="ShopId" type="string" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByIdResponse specific -->
+	<xs:complexType name="GetProductByIdResponseBodyType">
+		<xs:sequence>
+			<element name="Product">
+				<complexType>
+					<sequence>
+						<xs:element name="longDescription" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="productID" type="xs:int" />
+						<xs:element name="name" type="xs:string" />
+						<xs:element name="buyable" type="xs:string" minOccurs="0" />
+						<xs:element name="shortDescription" type="xs:string" />
+						<xs:element name="parentCategoryID" type="xs:int" />
+						<xs:element name="resourceId" type="xs:anyURI"
+							minOccurs="0" />
+						<xs:element name="Price">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="priceDescription" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="priceValue" type="xs:float"
+										minOccurs="0" />
+									<xs:element name="priceUsage" type="xs:string"
+										minOccurs="0" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="keyword" type="xs:string" />
+						<xs:element name="productType" type="xs:string" />
+						<xs:element name="fullImage" type="xs:string" />
+						<xs:element name="thumbnail" type="xs:string" />
+
+						<xs:element name="partNumber" type="xs:string" />
+						<xs:element name="storeID" type="xs:int" />
+					</sequence>
+				</complexType>
+			</element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<xs:element name="GetProductByIdResponse" type="tns:GetProductByIdResponseType" />
+	<xs:complexType name="GetProductByIdResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body" type="tns:GetProductByIdResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByCategoryRequest specific -->
+	<xs:element name="GetProductByCategoryRequest" type="tns:GetProductByCategoryRequestType" />
+	<xs:complexType name="GetProductByCategoryRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body" type="tns:GetProductByCategoryRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetProductByCategoryRequestBodyType">
+		<xs:sequence>
+			<xs:element name="CategoryId" type="xs:string" />
+			<element name="CatalogId" type="string" />
+			<element name="ShopId" type="string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByCategoryResponse specific -->
+	<xs:complexType name="GetProductByCategoryResponseBodyType">
+		<xs:sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="Product">
+				<complexType>
+					<sequence>
+						<xs:element name="longDescription" type="xs:string" />
+						<xs:element name="productID" type="xs:int" />
+						<xs:element name="name" type="xs:string" />
+						<xs:element name="buyable" type="xs:string" />
+						<xs:element name="shortDescription" type="xs:string" />
+						<xs:element name="parentCategoryID" type="xs:int" />
+						<xs:element name="resourceId" type="xs:anyURI" />
+						<xs:element name="Price">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="priceDescription" type="xs:string" />
+									<xs:element name="priceValue" type="xs:float" />
+									<xs:element name="priceUsage" type="xs:string" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="keyword" type="xs:string" />
+						<xs:element name="productType" type="xs:string" />
+						<xs:element name="fullImage" type="xs:string" />
+						<xs:element name="thumbnail" type="xs:string" />
+
+						<xs:element name="partNumber" type="xs:string" />
+						<xs:element name="storeID" type="xs:int" />
+					</sequence>
+				</complexType>
+			</element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<xs:element name="GetProductByCategoryResponse" type="tns:GetProductByCategoryResponseType" />
+	<xs:complexType name="GetProductByCategoryResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body"
+				type="tns:GetProductByCategoryResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+
+	<!-- GetProductByCategoryRequest specific -->
+	<xs:element name="GetPriceRequest" type="tns:GetPriceRequestType" />
+	<xs:complexType name="GetPriceRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body" type="tns:GetPriceRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetPriceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductId" type="xs:string" />
+
+
+			<element name="StoreId" type="string" />
+			<element name="PriceRuleName" type="string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+	<!-- GetPriceResponse specific -->
+	<xs:complexType name="GetPriceResponseBodyType">
+		<xs:sequence>
+
+			<xs:element name="Price">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="priceDescription" type="xs:string" />
+						<xs:element name="priceValue" type="xs:decimal" />
+						<xs:element name="priceCurrency" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="GetPriceResponse" type="tns:GetPriceResponseType" />
+	<xs:complexType name="GetPriceResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body" type="tns:GetPriceResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByCategoryIdRequest specific -->
+	<xs:complexType name="GetProductByCategoryIdRequestType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:RequestContextType" />
+			<xs:element name="Body" type="tns:GetProductByCategoryIdRequestBodyType" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetProductByCategoryIdRequestBodyType">
+		<xs:sequence>
+			<xs:element name="CategoryIdentifies" type="xs:string" />
+			<element name="storeId" type="string" />
+					</xs:sequence>
+	</xs:complexType>
+
+	<!-- specific -->
+
+	<!-- GetProductByCategoryIdResponse specific -->
+	<xs:complexType name="GetProductByCategoryIdResponseBodyType">
+		<xs:sequence>
+			 <xs:element name="GetProductByCategoryId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="recordSetTotal" minOccurs="0"/>
+        <xs:element type="xs:string" name="resourceName" minOccurs="0"/>
+        <xs:element type="xs:anyURI" name="resourceId" minOccurs="0"/>
+        <xs:element type="xs:string" name="recordSetComplete" minOccurs="0"/>
+        <xs:element type="xs:byte" name="recordSetStartNumber" minOccurs="0"/>
+        <xs:element name="CatalogGroupView" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="metaKeyword"/>
+              <xs:element type="xs:string" name="metaDescription"/>
+              <xs:element type="xs:string" name="title"/>
+              <xs:element type="xs:anyURI" name="resourceId"/>
+              <xs:element type="xs:short" name="identifier"/>
+              <xs:element type="xs:anyURI" name="productsURL"/>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:short" name="uniqueID"/>
+              <xs:element type="xs:string" name="fullImageAltDescription"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:byte" name="recordSetCount" minOccurs="0"/>
+        <xs:element name="MetaData" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="metaKey"/>
+              <xs:element type="xs:byte" name="metaData"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<xs:complexType name="GetProductByCategoryIdResponseType">
+		<xs:sequence>
+			<xs:element name="Context" type="si:ResponseContextType" />
+
+
+			<xs:element name="Body"
+				type="tns:GetProductByCategoryResponseBodyType" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+    <element name="GetCategoryByCategoryId" type="tns:GetCategoryByCategoryIdType"></element>
+
+    <complexType name="GetCategoryByCategoryIdType">
+    	<sequence>
+    		<element name="RequestContext" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,39 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" type="xs:byte" name="recordSetTotal" />
+				<xs:element minOccurs="0" type="xs:string" name="resourceName" />
+				<xs:element minOccurs="0" type="xs:anyURI" name="resourceId" />
+				<xs:element minOccurs="0" type="xs:string" name="recordSetComplete" />
+				<xs:element minOccurs="0" type="xs:byte" name="recordSetStartNumber" />
+				<xs:element name="CatalogGroupView">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" type="xs:string" name="metaKeyword" />
+							<xs:element minOccurs="0" type="xs:string" name="metaDescription" />
+							<xs:element minOccurs="0" type="xs:string" name="title" />
+							<xs:element minOccurs="0" type="xs:anyURI" name="resourceId" />
+							<xs:element minOccurs="0" type="xs:short" name="identifier" />
+							<xs:element minOccurs="0" type="xs:anyURI" name="productsURL" />
+							<xs:element minOccurs="0" type="xs:string" name="name" />
+							<xs:element type="xs:short" name="uniqueID" />
+							<xs:element minOccurs="0" type="xs:string"
+								name="fullImageAltDescription" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element type="xs:byte" name="recordSetCount" />
+				<xs:element name="MetaData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="metaKey" />
+							<xs:element type="xs:byte" name="metaData" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -5,7 +5,9 @@
 <listEntry value="si.petrol.ecommerce.module"/>
 </listAttribute>
 <booleanAttribute key="Initialized" value="true"/>
-<mapAttribute key="ProcessesArg"/>
+<mapAttribute key="ProcessesArg">
+<mapEntry key="si.petrol.productfeed.application" value="si.petrol.productfeed.GenerateProductFeeds,si.petrol.ecommerce.dataprocesses.GetCategoryByCategoryId,si.petrol.ecommerce.dataprocesses.GetInventoryAvailability,si.petrol.ecommerce.dataprocesses.GetPrice,si.petrol.ecommerce.dataprocesses.GetProductByCategory,si.petrol.ecommerce.dataprocesses.GetProductById"/>
+</mapAttribute>
 <listAttribute key="SelectedApplications">
 <listEntry value="si.petrol.productfeed.application"/>
 </listAttribute>
@@ -15,8 +17,7 @@
 </listAttribute>
 <listAttribute key="SelectedPlugins"/>
 <mapAttribute key="SelectedProcesses">
-<mapEntry key="si.petrol.ecommerce.module" value="si.petrol.ecommerce.dataprocesses.GetCategoryByCategoryId,si.petrol.ecommerce.dataprocesses.GetInventoryAvailability,si.petrol.ecommerce.dataprocesses.GetPrice,si.petrol.ecommerce.dataprocesses.GetProductByCategory,si.petrol.ecommerce.dataprocesses.GetProductById"/>
-<mapEntry key="si.petrol.productfeed" value="si.petrol.productfeed.GenerateProductFeeds"/>
+<mapEntry key="si.petrol.productfeed" value="si.petrol.productfeed.GenerateProductFeeds,si.petrol.ecommerce.dataprocesses.GetCategoryByCategoryId,si.petrol.ecommerce.dataprocesses.GetInventoryAvailability,si.petrol.ecommerce.dataprocesses.GetPrice,si.petrol.ecommerce.dataprocesses.GetProductByCategory,si.petrol.ecommerce.dataprocesses.GetProductById"/>
 </mapAttribute>
 <booleanAttribute key="UseGovernance" value="true"/>
 <booleanAttribute key="append.args" value="true"/>
